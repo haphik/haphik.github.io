@@ -14,9 +14,6 @@ let eGrundkarteTirol = {
     sommer: L.tileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {
         attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
     }),
-    basemap: L.tileLayer("https://wmts.kartetirol.at/gdi_basemap/{z}/{x}/{y}.png", {
-        attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
-    }),
     nomenklatur: L.tileLayer("https://wmts.kartetirol.at/gdi_nomenklatur/{z}/{x}/{y}.png", {
         attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`,
         pane: "overlayPane",
@@ -29,12 +26,10 @@ L.control.layers({
         eGrundkarteTirol.sommer,
         eGrundkarteTirol.nomenklatur
     ]).addTo(map),
-    "eGrundkarte Tirol grau": L.layerGroup([
-        eGrundkarteTirol.basemap,
-        eGrundkarteTirol.nomenklatur
-    ]),
+
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
+    "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
 }).addTo(map);
 
 // Maßstab
