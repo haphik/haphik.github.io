@@ -6,6 +6,9 @@ let ibk = {
     lng: 11.392778
 };
 
+// Karte
+let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
+
 // thematische Layer
 let overlays = {
     temperature: L.featureGroup(),
@@ -14,8 +17,7 @@ let overlays = {
     forecast: L.featureGroup().addTo(map)
 }
 
-// Karte
-let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
+
 
 // Hintergrundkarten
 let eGrundkarteTirol = {
