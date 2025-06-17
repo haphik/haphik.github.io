@@ -14,6 +14,7 @@ let overlays = {
     temperature: L.featureGroup(),
     wind: L.featureGroup(),
     snow: L.featureGroup(),
+    routen: L.featureGroup().addTo(map),  
     forecast: L.featureGroup().addTo(map)
 }
 
@@ -45,6 +46,7 @@ L.control.layers({
     "Wind": overlays.wind,
     "Schnee": overlays.snow,
     "Vorhersage": overlays.forecast,
+    "Routen": overlays.routen,
 }).addTo(map);
 
 
@@ -74,4 +76,29 @@ L.control.rainviewer({
     animationInterval: 500,
     opacity: 0.5
 }).addTo(map);
-	
+
+//Marker
+
+const ROUTE = [
+    {
+        lat: 47.200712, 
+        lng: 11.242886,
+        zoom: 13,
+        title: "Salfeinsee",
+    },
+    {
+        title: "XY",
+        lat: 47.200,
+        lng: 14.203333,
+        zoom: 13,
+    },]
+
+   for (let i = 0; i < ROUTE.length; i++) {
+    let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(overlays.routen);
+    marker.bindPopup(`
+        <h2>${ROUTE[i].title}</h2>
+    `);
+    marker.bindPopup(marker).openPopup();
+}
+
+ 

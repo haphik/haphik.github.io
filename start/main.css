@@ -25,7 +25,6 @@ header {
     justify-content: space-between; 
     padding: 10px 20px;
 }
-
 header a {
     margin-left: 20px;
     text-decoration: none;
@@ -33,6 +32,12 @@ header a {
 }
 
 /* KI ende */
+header a img {
+    border: 1px solid silver;
+    border-radius: 50%;
+    margin-top: -75px;
+    margin-left: calc(50% - 50px);
+}
 
 header h2 {
     margin: 0;

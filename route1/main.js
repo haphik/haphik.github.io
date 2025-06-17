@@ -58,4 +58,6 @@ var miniMap = new L.Control.MiniMap(wmts, {
 
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
+
+
 	
