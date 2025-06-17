@@ -29,7 +29,7 @@ L.control.layers({
 
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
-    "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
+    "BasemapAT grau": L.tileLayer.provider("BasemapAT.grau"),
 }).addTo(map);
 
 // Maßstab
@@ -58,6 +58,3 @@ var miniMap = new L.Control.MiniMap(wmts, {
 
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
-
-
-	

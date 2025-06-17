@@ -99,6 +99,7 @@ const ROUTE = [
         <h2>${ROUTE[i].title}</h2>
     `);
     marker.bindPopup(marker).openPopup();
-}
+};
+
 
  
