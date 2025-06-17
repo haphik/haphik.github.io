@@ -3,14 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'TT Commons Pro ', sans-serif;
     background-color: #e7eccf;
+    font-size: 14px;
+    line-height: 1.5;
 }
 h1, h2, h3 {
-    font-family: 'Georgia', serif;
+    font-family: 'TT Livret Display', serif;
 }
 a {
     color: black;
+    font-size: 14px;
 }
 
 main {
@@ -50,6 +53,7 @@ article {
     border-top: 1px solid black;
     margin-bottom: 0.5em;
     border-bottom: 1px solid black;
+    text-align: justify;
 }
 
 #map {
@@ -80,9 +84,9 @@ footer nav {
     margin-right: 0.5em;
 }
 
-.bike-tirol{
-    --ele-area: #3D9970;
-    --ele-bg: white;
+.hike{
+    --ele-area: #006400;
+    --ele-bg: #eaf1e7;
 }
 
 #profile{

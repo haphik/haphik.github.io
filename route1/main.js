@@ -40,7 +40,7 @@ L.control.scale({
 
 // leaflet plugin elevation
 var controlElevation = L.control.elevation({
-    theme: "bike-tirol",
+    theme: "hike",
     time:false,
     elevationDiv: "#profile",
     height: 300,
