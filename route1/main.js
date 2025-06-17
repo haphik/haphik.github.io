@@ -40,14 +40,14 @@ L.control.scale({
 
 // leaflet plugin elevation
 var controlElevation = L.control.elevation({
-    theme: "bike-tirol",
+    theme: "hike",
     time:false,
     elevationDiv: "#profile",
     height: 300,
 
     //slope: true,
 }).addTo(map);
-controlElevation.load("data/etappe9.gpx")
+controlElevation.load("Salfeinsee.gpx")
 
 //Minimap
 var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {minZoom: 0, maxZoom: 13});
@@ -58,4 +58,6 @@ var miniMap = new L.Control.MiniMap(wmts, {
 
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
+
+
 	

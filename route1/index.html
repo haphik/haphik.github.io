@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="" width=device-width, initial-scale="1.0">
 
-    <title>Route 1: </title>
+    <title>Route 1: Salfeinsee</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -28,8 +28,7 @@
 
     <!-- Leaflet Plugins Fullscreen -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css" rel="stylesheet">
 
     <!-- Leaflet providers -->
     <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
@@ -40,59 +39,87 @@
 </head>
 
 <body>
-     <main>
+    <main>
         <header>
-            <h2><i class="fa-solid fa-person-biking"></i> Titel </h2>
+            <h1><i class="fa-solid fa-mountain-sun"></i> Happy Hiking </h1>
+            <a href="../start/index.html">Startseite</a>
+            <a href="../route1/index.html">Route 1</a>
+            <a href="../route2/index.html">Route 2</a>
         </header>
         <article>
-            <h1>Route 1: XX </h1>
-            <p> Die Tour ist superdupertoll und blabla</p>
-
+            <h2>Route 1: Salfeinsee </h2>
             <div class="summary">
-                <div class="summary-badge" title="Fahrzeit">
-                    <i class="fa-regular fa-clock"></i> 3: 15 h
+                <div class="summary-badge" title="Gehzeit">
+                    <i class="fa-regular fa-clock"></i> 6: 50 h
                 </div>
                 <div class="summary-badge" title="Länge">
-                    <i class="fa-solid fa-ruler-horizontal"></i> 31,5 km
+                    <i class="fa-solid fa-ruler-horizontal"></i> 16,1 km
                 </div>
                 <div class="summary-badge" title="Höhenmeter bergauf">
-                    <i class="fa-solid fa-up-long"></i> 540 m
+                    <i class="fa-solid fa-up-long"></i> 1180 m
                 </div>
                 <div class="summary-badge" title="Höhenmeter bergab">
-                    <i class="fa-solid fa-down-long"></i> 780 m
+                    <i class="fa-solid fa-down-long"></i> 1180 m
                 </div>
                 <div class="summary-badge" title="höchster Punkt">
-                    <i class="fa-solid fa-arrows-up-to-line"></i> 1030 m
+                    <i class="fa-solid fa-arrows-up-to-line"></i> 2110 m
                 </div>
                 <div class="summary-badge" title="tiefster Punkt">
-                    <i class="fa-solid fa-arrows-down-to-line"></i> 480 m
+                    <i class="fa-solid fa-arrows-down-to-line"></i> 960 m
                 </div>
                 <div class="summary-badge" title="Schwierigkeitsgrad">
                     <i class="fa-solid fa-heart-pulse"></i> mittelschwer
                 </div>
                 <div class="summary-badge" title="Download">
-                    <i class="fa-solid fa-download"></i> <a href="data/etappe9.gpx"> Download GPX </a>
+                    <i class="fa-solid fa-download"></i> <a href="Salfeinsee.gpx"> Download GPX </a>
                 </div>
             </div>
+            <p> Die Wanderung zum Salfeinsee ist von Innsbruck aus gut erreichbar, technisch einfach, führt durch
+                naturnahe Landschaften und zählt damit zu einer beliebten Tour der Region. Sie bietet eine
+                abwechslungsreiche Landschaft mit herrlichen Ausblicken über das Inntal und die markanten Kalkkögel.
+                Oben angekommen, genießen Wanderer einen beeindruckenden Rundumblick auf die umliegenden Alpen. </p>
 
-            <select name="pulldown" id="pulldown"></select>
-
-            <div id="map"></div>
-            <div id="profile"></div>
+            <img src="kalkkoegele.jpg" alt="Kalkkoegele">
+            <!--https://pixabay.com/de/photos/panorama-kalkk%C3%B6gel-tirol-sedimente-3569697/-->
 
             <h3>Streckenbeschreibung</h3>
-            <p> Gestartet wird ...</p>
+            <p> Gestartet wird an der Bushaltestelle Grinzens Abzweigung Kemater Alm. Der Aufstieg beginnt zunächst kurz
+                auf Asphalt, führt aber schon bald auf einen Forstweg und schließlich größtenteils über den gut
+                beschilderten Figlsteig. Meist verläuft der Weg angenehm schattig durch einen Nadelwald, in dem dicht
+                mit Flechten bewachsene, knorrige Bäume zum Staunen einladen und die Anstrengung fast vergessen
+                lassen.Sobald man den Wald verlässt, ist das Ziel schon nahe. Am Gipfelkreuz des Figl bietet sich ein
+                wunderbarer Platz, um den Blick schweifen zu lassen und den Aufstieg zu feiern. Nur wenig später
+                erreicht man unter moderater Steigung den Salfeinsee und damit das landschaftliche Highlight der Tour.
+                Besonders beeindruckend ist die Spiegelung der markanten Kalkkögel im klaren Wasser - ein Ort, der zum
+                Verweilen einlädt. Wer möchte, kann nun bereits über die Salfeinsalm den Abstieg antreten. Sehr zu
+                empfehlen ist es jedoch, die Wanderung über den Grieskogel fortzusetzen. Der Weg führt über einen Grat
+                weiter, bevor der Abstieg über offene Weideflächen ins Tal beginnt. Dieses wird vom rauschenden
+                Sendersbach durchzogen und bietet mit der urigen Kemater Alm eine weitere idyllische Rastmöglichkeit.Der
+                Rückweg zum Ausgangspunkt erfolgt über eine Forststraße, die dem Sendersbach folgt und bildet einen
+                entspannter Ausklang dieser abwechslungsreichen Rundtour.
+                Alternativ kann die Tour auch noch erweitert werden, indem die Wanderung über Breitschwemmkogel und
+                Angerbergkopf fortgesetzt wird. Nun besteht auch die Option ins Fotschertal abzusteigen. </p>
 
             <h3>Einkehrmöglichkeiten</h3>
-            <p> Für eine schmackhafte...  </p>
+            <p> Für eine schmackhafte Pause bietet sich die Kemater Alm an. Wunderschön im Tal gelegen, bietet sich eine
+                Einkehr an, um nochmal Kraft für die letzten Meter zu tanken. Besonders jegliches Knödelgericht ist eine
+                besondere Gaumenfreunde! </p>
 
-              <h3>Anreise</h3>
-            <p> Zum Startpunkt der Wanderung ...  </p>
+            <h3>Anreise</h3>
+            <p> Der Ausgangspunkt der Wanderung in Grinzens ist von Innsbruck aus hervorragend mit öffentlichen
+                Verkehrsmitteln erreichbar. Mehrmals pro Stunde bringt der Bus 404 Wanderfreund*innen innerhalb 30
+                Minuten zur Haltestelle Grinzens Abzweigung Kemater Alm - und damit direkt zum Start der Tour. </p>
+
+
+            <div id="map"></div>
+
+            <div id="profile"></div>
+
 
         </article>
 
 
-     
+
 
         <footer>
             <strong>Datenquellen:</strong>
@@ -107,11 +134,9 @@
         </footer>
     </main>
 
-    <a href="../start/index.html">Startseite</a>
-    <a href="../route1/index.html">Route 1</a>
-    <a href="../route2/index.html">Route 2</a>
 
-    
+
+
 </body>
 
 
