@@ -12,6 +12,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!--Farvicon setzen-->
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <!-- Leaflet CSS & JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -67,6 +70,14 @@
         <article>
             <div id="map"></div>
         </article>
+
+        <!--KI-->
+        <!-- Forecast-Link sichtbar machen -->
+        <section id="forecast-info">
+            <strong>Winddaten-Stand:</strong>
+            <span id="forecast-link">Wird geladen ...</span>
+        </section>
+        <!--KI Ende-->
     </main>
 
     <footer>
