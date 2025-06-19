@@ -120,7 +120,7 @@ async function showForecastForRoute(route, marker) {
                 <li><strong>Schwierigkeit:</strong> ${route.difficulty}</li>
             </ul>
             <h4>Wettervorhersage</h4>
-            <p><strong>Temperatur:</strong> ${temperature.toFixed(1)} °C</p>
+            <p>aktuelle Temperatur: ${temperature.toFixed(1)} °C</p>
             <p class="weather-meta">Stand: ${timestamp.toLocaleString()}</p>
             <div class="weather-icons">
         `;

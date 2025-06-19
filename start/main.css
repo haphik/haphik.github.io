@@ -6,7 +6,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #e7eccf;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Georgia', serif;
 }
 a {
@@ -73,33 +73,16 @@ footer nav {
     display: inline-block;
 }
 
-.summary {
-    margin-bottom: 2em;
+/*Popup-Styles*/
+
+.weather-popup {
+    font-family: "Arial", sans-serif;
+    font-size:0.9em;
 }
 
-.summary-badge {
-    display: inline-block;
-    padding: 0.4em;
-    border: 1px solid silver;
-    border-radius: 10px;
-    margin-right: 0.5em;
+.weather-popup h1, h2, h3, h4 {
+    font-family: "Arial", sans-serif;
 }
-
-#pulldown {
-    font-size: 1.1em;
-    margin-bottom: 0.3em;
-}
-
-.bike-tirol{
-    --ele-area: #3D9970;
-    --ele-bg: white;
-}
-
-#profile{
-    margin-top: 0.3em;
-    border: 1px solid gray;
-}
-
 .weather-icons {
     text-align: center;
     margin-top: 0.5em;
@@ -132,3 +115,5 @@ weather-meta {
     max-width:260px;
     font-size:0.9em;
 }
+
+
