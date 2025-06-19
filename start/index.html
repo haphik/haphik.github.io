@@ -2,70 +2,79 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Hiking</title>
-  <link rel="icon" href="data:,"> <!-- Farvicon kann noch hinzugefügt werden-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Hiking</title>
+    <link rel="icon" href="data:,"> <!-- Farvicon kann noch hinzugefügt werden-->
 
-  <!-- Fonts und Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts und Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Leaflet CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Leaflet Plugins -->
-  <link href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
+    <!-- Leaflet Plugins -->
 
-  <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+    <!-- Leaflet minimap Plugin -->
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
 
-  <!-- Leaflet Rainviewer Plugin -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css"/>
+    <!-- Leaflet Fullscreen Plugin -->
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+
+    <!-- Leaflet Rainviewer Plugin -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css" />
     <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
-  
-    <!--  Leaflet Providers -->
-  <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
 
-  <!-- Eigene CSS und JS -->
-  <link rel="stylesheet" href="main.css" />
-  <script defer src="main.js"></script> 
+    <!-- Leaflet Velocity Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-velocity@2.1.4/dist/leaflet-velocity.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-velocity@2.1.4/dist/leaflet-velocity.min.css" rel="stylesheet">
+
+
+    <!--  Leaflet Providers -->
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+
+    <!-- Eigene CSS und JS -->
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="main.js"></script>
 </head>
 
 <body>
-  <header>
-    <h2><i class="fa-solid fa-mountain-sun"></i> Happy Hiking</h2>
-    <nav>
-      <a href="../start/index.html">Startseite</a>
-      <a href="../route1/index.html">Route 1</a>
-      <a href="../route2/index.html">Route 2</a>
-    </nav>
-    <img src="trekking.jpg" alt="Trekking" />
-  </header>
+    <header>
+        <h2><i class="fa-solid fa-mountain-sun"></i> Happy Hiking</h2>
+        <nav>
+            <a href="../start/index.html">Startseite</a>
+            <a href="../route1/index.html">Route 1</a>
+            <a href="../route2/index.html">Route 2</a>
+        </nav>
+        <img src="trekking.jpg" alt="Trekking" />
+    </header>
 
-  <main>
-    <h1>Happy Hiking</h1>
-    <h3>Kathleen, Johanna und Fritz</h3>
+    <main>
+        <h1>Happy Hiking</h1>
+        <h3>Kathleen, Johanna und Fritz</h3>
 
-    <a href="konzept.pdf" target="_blank">Happy Hiking Konzept</a>
+        <a href="konzept.pdf" target="_blank">Happy Hiking Konzept</a>
 
-    <article>
-      <div id="map"></div>
-    </article>
-  </main>
+        <article>
+            <div id="map"></div>
+        </article>
+    </main>
 
-  <footer>
-    <strong>Datenquellen:</strong>
-    <nav>
-      <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway Forecast</a> |
-      <a href="https://github.com/metno/weathericons/">MET Icons</a> |
-      <a href="https://nominatim.org/release-docs/latest/api/Reverse/">Nominatim</a> |
-      <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data">ECMWF Open Data</a>
-    </nav>
-  </footer>
+    <footer>
+        <strong>Datenquellen:</strong>
+        <nav>
+            <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway Forecast</a> |
+            <a href="https://github.com/metno/weathericons/">MET Icons</a> |
+            <a href="https://nominatim.org/release-docs/latest/api/Reverse/">Nominatim</a> |
+            <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data">ECMWF Open Data</a>
+        </nav>
+    </footer>
 </body>
 
 </html>
