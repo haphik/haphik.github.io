@@ -202,3 +202,19 @@ async function loadWindLayer() {
 
 loadWindLayer();
   
+
+//GPX-Route laden
+new L.GPX("Salfeinsee.gpx", {
+  async: true,
+  marker_options: {
+    startIconUrl: null,
+    endIconUrl: null,
+    shadowUrl: null
+  },
+    polyline_options: {
+    color: "darkgreen",
+    wight: 5
+  }
+}).on('loaded', function(e) {
+  map.fitBounds(e.target.getBounds());
+}).addTo(overlays.routen);
