@@ -74,7 +74,7 @@ const ROUTE = [
         lat: 47.200712, 
         lng: 11.242886,
         zoom: 13,
-        title: "Salfeinsee",
+        title: "Wanderung Salfeinsee",
         length: "16.1 km",
         duration: "6:50 h",
         difficulty: "mittelschwer",
