@@ -11,11 +11,8 @@ let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
 
 // thematische Layer
 let overlays = {
-    temperature: L.featureGroup(),
     wind: L.featureGroup(),
-    snow: L.featureGroup(),
     routen: L.featureGroup().addTo(map),  
-    forecast: L.featureGroup().addTo(map)
 }
 
 
@@ -42,10 +39,7 @@ L.control.layers({
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
     "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
 },{
-    "Temperatur": overlays.temperature,
     "Wind": overlays.wind,
-    "Schnee": overlays.snow,
-    "Vorhersage": overlays.forecast,
     "Routen": overlays.routen,
 }).addTo(map);
 
@@ -102,8 +96,10 @@ const ROUTE = [
     ];
 
 //Wettervorhersage
-async function showForecastForRoute(route, marker) {
+    async function showForecastForRoute(route, marker) {
     let url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${route.lat}&lon=${route.lng}`;
+   
+
     try {
         let response = await fetch(url);
         let jsondata = await response.json();
@@ -141,6 +137,7 @@ async function showForecastForRoute(route, marker) {
             `;
         }
 
+
         markup += `</div>`;
         marker.bindPopup(markup);
 
@@ -160,5 +157,48 @@ for (let route of ROUTE) {
 }
             
 
+//Windlayer 
+async function loadWindLayer() {
+    try {
+        const response = await fetch('https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json');
+        const data = await response.json();
 
+        let forecastDate = new Date(data[0].header.refTime);
+        forecastDate.setHours(forecastDate.getHours() + data[0].header.forecastTime);
+
+        let forecastSpan = document.querySelector("#forecast-link"); 
+        forecastSpan.innerHTML = `
+            <a href="https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json" target="_blank">${forecastDate.toLocaleString()}</a>
+        `;
+
+        const velocityLayer = L.velocityLayer({
+            displayValues: true,
+            displayOptions: {
+                velocityType: "Wind",
+                position: "bottomleft",
+                speedUnit: "km/h",
+                emptyString: "Keine Winddaten verfügbar",
+                angleConversion: "meteo",
+                showCardinal: true,
+                directionString: "Richtung",
+                speedString: "Geschwindigkeit"
+            },
+            data: data,
+            minVelocity: 0,
+            maxVelocity: 10,
+            velocityScale: 0.005,
+            colorScale: [
+                "#3288bd", "#66c2a5", "#abdda4", "#e6f598",
+                "#fee08b", "#fdae61", "#f46d43", "#d53e4f"
+            ],
+            opacity: 0.97
+        }).addTo(overlays.wind);
+        
+    } catch (error) {
+        console.error("Fehler beim Laden der Winddaten:", error);
+        alert("Winddaten konnten nicht geladen werden.");
+    }
+}
+
+loadWindLayer();
   
