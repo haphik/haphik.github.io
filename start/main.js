@@ -65,17 +65,7 @@ var miniMap = new L.Control.MiniMap(wmts, {
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
 
-// Change default options
-L.control.rainviewer({
-    position: 'bottomleft',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(map);
+
 
 //PopUp
 
@@ -100,12 +90,35 @@ const ROUTE = [
     },]
 
    for (let i = 0; i < ROUTE.length; i++) {
+    console.log(ROUTE[i]);
+
+    //Marker zeichnen
     let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(overlays.routen);
+
+    //Popup definieren
     marker.bindPopup(`
         <h2>${ROUTE[i].title}</h2>
+        <ul>
+            <li><strong>Länge:</strong> ${ROUTE[i].length}</li>
+            <li><strong>Dauer:</strong> ${ROUTE[i].duration}</li>
+            <li><strong>Schwierigkeit:</strong> ${ROUTE[i].difficulty}</li>
+        </ul>
     `);
-    marker.bindPopup(marker).openPopup();
+    
 };
 
 
- 
+  // Rainviewer initialisieren
+    
+    L.control.rainviewer({ 
+        position: 'bottomleft',
+        nextButtonText: '>',
+        playStopButtonText: '▶/⏸',
+        prevButtonText: '<',
+        positionSliderLabelText: "Zeit:",
+        opacitySliderLabelText: "Deckkraft:",
+        animationInterval: 300,
+        opacity: 0.5
+    }).addTo(map);
+
+    

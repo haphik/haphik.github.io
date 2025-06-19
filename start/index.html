@@ -2,78 +2,70 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale="1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Hiking</title>
+  <link rel="icon" href="data:,"> <!-- Farvicon kann noch hinzugefügt werden-->
 
-    <title>Startseite</title>
+  <!-- Fonts und Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        
+  <!-- Leaflet Plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
 
+  <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
 
-    <!-- Leaflet Plugins Minimap -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" rel="stylesheet">
+  <!-- Leaflet Rainviewer Plugin -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
+  
+    <!--  Leaflet Providers -->
+  <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
 
-    <!-- Leaflet Plugins Fullscreen -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css" rel="stylesheet">
-
-    <!-- Leaflet providers -->
-    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
-    
-    
-
-
-    <!-- eigene Stile und Hauptskript -->
-    <link rel="stylesheet" href="main.css">
-    <script defer src="main.js"></script>
-
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script defer src="main.js"></script>
+  <!-- Eigene CSS und JS -->
+  <link rel="stylesheet" href="main.css" />
+  <script defer src="main.js"></script> 
 </head>
 
 <body>
+  <header>
+    <h2><i class="fa-solid fa-mountain-sun"></i> Happy Hiking</h2>
+    <nav>
+      <a href="../start/index.html">Startseite</a>
+      <a href="../route1/index.html">Route 1</a>
+      <a href="../route2/index.html">Route 2</a>
+    </nav>
+    <img src="trekking.jpg" alt="Trekking" />
+  </header>
 
-    <main>
-       <header>
-            <h2><i class="fa-solid fa-mountain-sun"></i> Happy Hiking </h2>
-            <a href="../start/index.html">Startseite</a>
-            <a href="../route1/index.html">Route 1</a>
-            <a href="../route2/index.html">Route 2</a>
-            <img src="trekking.jpg" alt="Trekking">
-        <!--https://pixabay.com/de/photos/wandern-gruppe-alpin-linie-299000/-->
-        </header>
+  <main>
+    <h1>Happy Hiking</h1>
+    <h3>Kathleen, Johanna und Fritz</h3>
 
+    <a href="konzept.pdf" target="_blank">Happy Hiking Konzept</a>
 
-        <h1>Happy Hiking</h1>
-        <h3>Kathleen, Johanna und Fritz</h3>
+    <article>
+      <div id="map"></div>
+    </article>
+  </main>
 
-        <!-- link zu PDF -->
-        <a href="konzept.pdf" target="_blank">Happy Hiking Konzept</a>
-        
-        <article>
-            <div id="map"></div>
-        </article>
-        <footer>
-            <strong>Datenquellen:</strong>
-            <nav>
-                <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway Locationforecast</a> (<a href="https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=47.267222&lon=11.392778">Innsbruck</a>) |
-                <a href="https://github.com/metno/weathericons/">MET Weather API icons</a> |
-                <a href="https://nominatim.org/release-docs/latest/api/Reverse/">Nominatim Reverse Geocoding</a> (<a href="https://nominatim.openstreetmap.org/reverse?lat=47.267222&lon=11.392778&zoom=15&format=jsonv2">Innsbruck</a>) |
-                <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data">ECMWF Open Data</a> <span id="forecast-link"></span>
-            </nav>
-        </footer>
-        </main>
+  <footer>
+    <strong>Datenquellen:</strong>
+    <nav>
+      <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway Forecast</a> |
+      <a href="https://github.com/metno/weathericons/">MET Icons</a> |
+      <a href="https://nominatim.org/release-docs/latest/api/Reverse/">Nominatim</a> |
+      <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data">ECMWF Open Data</a>
+    </nav>
+  </footer>
 </body>
+
 </html>
