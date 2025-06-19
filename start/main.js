@@ -65,10 +65,21 @@ var miniMap = new L.Control.MiniMap(wmts, {
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
 
+// Rainviewer initialisieren
+    
+    L.control.rainviewer({ 
+        position: 'bottomleft',
+        nextButtonText: '>',
+        playStopButtonText: '▶/⏸',
+        prevButtonText: '<',
+        positionSliderLabelText: "Zeit:",
+        opacitySliderLabelText: "Deckkraft:",
+        animationInterval: 300,
+        opacity: 0.5
+    }).addTo(map);
 
-
-//PopUp
-
+//Popup und Wettervorhersage
+//Routenmarker
 const ROUTE = [
     {
         lat: 47.200712, 
@@ -87,38 +98,67 @@ const ROUTE = [
         length: "XXX km",
         duration: "X h",
         difficulty: "xxx",
-    },]
+    }
+    ];
 
-   for (let i = 0; i < ROUTE.length; i++) {
-    console.log(ROUTE[i]);
+//Wettervorhersage
+async function showForecastForRoute(route, marker) {
+    let url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${route.lat}&lon=${route.lng}`;
+    try {
+        let response = await fetch(url);
+        let jsondata = await response.json();
 
-    //Marker zeichnen
-    let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(overlays.routen);
+        let details = jsondata.properties.timeseries[0].data.instant.details;
+        let timestamp = new Date(jsondata.properties.meta.updated_at);
+        let temperature = details.air_temperature;
 
-    //Popup definieren
-    marker.bindPopup(`
-        <h2>${ROUTE[i].title}</h2>
-        <ul>
-            <li><strong>Länge:</strong> ${ROUTE[i].length}</li>
-            <li><strong>Dauer:</strong> ${ROUTE[i].duration}</li>
-            <li><strong>Schwierigkeit:</strong> ${ROUTE[i].difficulty}</li>
-        </ul>
-    `);
-    
-};
+        let markup = `
+            <h2>${route.title}</h2>
+            <ul>
+                <li><strong>Länge:</strong> ${route.length}</li>
+                <li><strong>Dauer:</strong> ${route.duration}</li>
+                <li><strong>Schwierigkeit:</strong> ${route.difficulty}</li>
+            </ul>
+            <h4>Wettervorhersage</h4>
+            <p><strong>Temperatur:</strong> ${temperature.toFixed(1)} °C</p>
+            <p class="weather-meta">Stand: ${timestamp.toLocaleString()}</p>
+            <div class="weather-icons">
+        `;
+
+        for (let i = 0; i <= 12; i += 3) {
+            let forecast = jsondata.properties.timeseries[i];
+            if (!forecast?.data?.next_1_hours?.summary) continue;
+
+            let symbol = forecast.data.next_1_hours.summary.symbol_code;
+            let time = new Date(forecast.time);
+            let hour = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            markup += `
+                <div class="weather-icon">
+                    <img src="https://api.met.no/images/weathericons/svg/${symbol}.svg" width="32" title="${hour}">
+                    <br><span>${hour}</span>
+                </div>
+            `;
+        }
+
+        markup += `</div>`;
+        marker.bindPopup(markup);
+
+    } catch (err) {
+        console.error("Fehler bei Wetterdaten:", err);
+        marker.bindPopup(`
+            <h2>${route.title}</h2>
+            <p style="color:red;">⚠ Wetterdaten nicht verfügbar</p>
+        `);
+    }
+}
+
+// Marker + Popup erstellen
+for (let route of ROUTE) {
+    let marker = L.marker([route.lat, route.lng]).addTo(overlays.routen);
+    showForecastForRoute(route, marker);
+}
+            
 
 
-  // Rainviewer initialisieren
-    
-    L.control.rainviewer({ 
-        position: 'bottomleft',
-        nextButtonText: '>',
-        playStopButtonText: '▶/⏸',
-        prevButtonText: '<',
-        positionSliderLabelText: "Zeit:",
-        opacitySliderLabelText: "Deckkraft:",
-        animationInterval: 300,
-        opacity: 0.5
-    }).addTo(map);
-
-    
+  

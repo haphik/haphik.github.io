@@ -100,3 +100,35 @@ footer nav {
     border: 1px solid gray;
 }
 
+.weather-icons {
+    text-align: center;
+    margin-top: 0.5em;
+    white-space:nowrap;
+    overflow-x: auto;
+}
+
+.weather-icon {
+    display: inline-block;
+    width: 40px;
+    margin: 0 4px;
+    font-size:0.8em;
+    vertical-align: top;
+}
+
+weather-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: auto;
+}
+
+weather-meta {
+    font-size: 0.8em;
+    color: #444;
+    margin-top: 0.3em;
+}
+
+.leaflet-popup-content {
+    max-width:260px;
+    font-size:0.9em;
+}
