@@ -77,7 +77,7 @@ L.control.rainviewer({
     opacity: 0.5
 }).addTo(map);
 
-//Marker
+//PopUp
 
 const ROUTE = [
     {
@@ -85,12 +85,18 @@ const ROUTE = [
         lng: 11.242886,
         zoom: 13,
         title: "Salfeinsee",
+        length: "16.1 km",
+        duration: "6:50 h",
+        difficulty: "mittelschwer",
     },
     {
-        title: "XY",
         lat: 47.200,
         lng: 14.203333,
         zoom: 13,
+        title: "XX",
+        length: "XXX km",
+        duration: "X h",
+        difficulty: "xxx",
     },]
 
    for (let i = 0; i < ROUTE.length; i++) {
