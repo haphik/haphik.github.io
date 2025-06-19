@@ -76,8 +76,8 @@ map.addControl(new L.Control.Fullscreen());
 //Routenmarker
 const ROUTE = [
     {
-        lat: 47.200712, 
-        lng: 11.242886,
+        lat: 47.2277789, 
+        lng: 11.2549661,
         zoom: 13,
         title: "Wanderung Salfeinsee",
         length: "16.1 km",
