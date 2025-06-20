@@ -38,13 +38,7 @@ L.control.layers({
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
     "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
-<<<<<<< HEAD
-}.addTo(map),
-{
-    "Temperatur": overlays.temperature,
-=======
 },{
->>>>>>> 23fb9c223de2367c1e27e9c6eb47590be0a4e468
     "Wind": overlays.wind,
     "Routen": overlays.routen,
 }).addTo(map);
@@ -65,23 +59,6 @@ var miniMap = new L.Control.MiniMap(wmts, {
 //Fullscreen
 map.addControl(new L.Control.Fullscreen());
 
-<<<<<<< HEAD
-// Change default options
-L.control.rainviewer({
-    position: 'bottomleft',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(map);
-
-//Marker
-
-/*const ROUTE = [
-=======
 // Rainviewer initialisieren
     
     L.control.rainviewer({ 
@@ -98,7 +75,6 @@ L.control.rainviewer({
 //Popup und Wettervorhersage
 //Routenmarker
 const ROUTE = [
->>>>>>> 23fb9c223de2367c1e27e9c6eb47590be0a4e468
     {
         lat: 47.2277789, 
         lng: 11.2549661,
@@ -112,47 +88,6 @@ const ROUTE = [
         lat: 47.200,
         lng: 14.203333,
         zoom: 13,
-<<<<<<< HEAD
-    },]
-
-   for (let i = 0; i < ROUTE.length; i++) {
-    let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(overlays.routen);
-    marker.bindPopup(`
-        <h2>${ROUTE[i].title}</h2>
-    `);
-    marker.bindPopup(marker).openPopup();
-};
-*/
-// Konstante
-const ROUTE = [
-    {
-        lat: 47.200712, 
-        lng: 11.242886,
-        zoom: 13,
-        title: "Salfeinsee",
-    },
-    {
-        title: "XY",
-        lat: 47.200,
-        lng: 14.203333,
-        zoom: 13,
-    },]
-
-// Loop der Etappen
-for (let i = 0; i < ROUTE.length; i++) {
-    console.log(ROUTE[i]);
-    // Marker zeichnen
-    let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(map);
-
-    // Popup definieren und öffnen
-    marker.bindPopup(`
-    <h2>${ROUTE[i].title}</h2>
-    <ul>
-        <li>Geogr. Breite: ${ROUTE[i].lat.toFixed(3)}°</li>
-        <li>Geogr. Länge: ${ROUTE[i].lng.toFixed(3)}°</li>
-    </ul>
-`)};
-=======
         title: "XX",
         length: "XXX km",
         duration: "X h",
@@ -214,7 +149,6 @@ for (let i = 0; i < ROUTE.length; i++) {
         `);
     }
 }
->>>>>>> 23fb9c223de2367c1e27e9c6eb47590be0a4e468
 
 // Marker + Popup erstellen
 for (let route of ROUTE) {
