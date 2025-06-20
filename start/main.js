@@ -80,6 +80,7 @@ const ROUTE = [
         lng: 11.24499,
         zoom: 13,
         title: "Wanderung Salfeinsee",
+        link: "../route1/index.html",
         length: "16.1 km",
         duration: "6:50 h",
         difficulty: "mittelschwer",
@@ -89,6 +90,7 @@ const ROUTE = [
         lng: 14.203333,
         zoom: 13,
         title: "XX",
+        link: "../route2/index.html",
         length: "XXX km",
         duration: "X h",
         difficulty: "xxx",
@@ -109,7 +111,7 @@ const ROUTE = [
         let temperature = details.air_temperature;
 
         let markup = `
-            <h2>${route.title}</h2>
+            <h2><a href="${route.link}" target="_blank">${route.title}</a></h2>
             <ul>
                 <li><strong>Länge:</strong> ${route.length}</li>
                 <li><strong>Dauer:</strong> ${route.duration}</li>
