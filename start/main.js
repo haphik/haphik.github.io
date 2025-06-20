@@ -86,10 +86,10 @@ const ROUTE = [
         difficulty: "mittelschwer",
     },
     {
-        lat: 47.200,
-        lng: 14.203333,
+        lat: 47.261468,
+        lng: 11.373871,
         zoom: 13,
-        title: "XX",
+        title: "Wanderung Achselkopf & Höttinger Alm",
         link: "../route2/index.html",
         length: "XXX km",
         duration: "X h",
@@ -221,7 +221,7 @@ new L.GPX("Salfeinsee.gpx", {
   map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
 
-new L.GPX("Achselkopf.gpx", {
+new L.GPX("AchselbodenundHoettingerAlm.gpx", {
   async: true,
   marker_options: {
     startIconUrl: null,
@@ -229,7 +229,7 @@ new L.GPX("Achselkopf.gpx", {
     shadowUrl: null
   },
     polyline_options: {
-    color: "lightgreen",
+    color: "darkblue",
     wight: 5
   }
 }).on('loaded', function(e) {

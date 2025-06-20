@@ -47,7 +47,7 @@ var controlElevation = L.control.elevation({
 
     //slope: true,
 }).addTo(map);
-controlElevation.load("Achselkopf.gpx")
+controlElevation.load("AchselbodenundHoettingerAlm.gpx")
 
 //Minimap
 var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {minZoom: 0, maxZoom: 13});
