@@ -33,7 +33,7 @@ L.control.layers({
     "eGrundkarte Tirol Sommer": L.layerGroup([
         eGrundkarteTirol.sommer,
         eGrundkarteTirol.nomenklatur
-    ]),
+    ]).addTo(map),
 
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
@@ -76,8 +76,8 @@ map.addControl(new L.Control.Fullscreen());
 //Routenmarker
 const ROUTE = [
     {
-        lat: 47.2277789, 
-        lng: 11.2549661,
+        lat: 47.188247, 
+        lng: 11.24499,
         zoom: 13,
         title: "Wanderung Salfeinsee",
         length: "16.1 km",
