@@ -36,12 +36,13 @@ L.control.layers({
     "eGrundkarte Tirol Sommer": L.layerGroup([
         eGrundkarteTirol.sommer,
         eGrundkarteTirol.nomenklatur
-    ]).addTo(map),
+    ]),
 
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
     "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
-},{
+}.addTo(map),
+{
     "Temperatur": overlays.temperature,
     "Wind": overlays.wind,
     "Schnee": overlays.snow,
@@ -79,7 +80,7 @@ L.control.rainviewer({
 
 //Marker
 
-const ROUTE = [
+/*const ROUTE = [
     {
         lat: 47.200712, 
         lng: 11.242886,
@@ -100,6 +101,36 @@ const ROUTE = [
     `);
     marker.bindPopup(marker).openPopup();
 };
+*/
+// Konstante
+const ROUTE = [
+    {
+        lat: 47.200712, 
+        lng: 11.242886,
+        zoom: 13,
+        title: "Salfeinsee",
+    },
+    {
+        title: "XY",
+        lat: 47.200,
+        lng: 14.203333,
+        zoom: 13,
+    },]
+
+// Loop der Etappen
+for (let i = 0; i < ROUTE.length; i++) {
+    console.log(ROUTE[i]);
+    // Marker zeichnen
+    let marker = L.marker([ROUTE[i].lat, ROUTE[i].lng]).addTo(map);
+
+    // Popup definieren und öffnen
+    marker.bindPopup(`
+    <h2>${ROUTE[i].title}</h2>
+    <ul>
+        <li>Geogr. Breite: ${ROUTE[i].lat.toFixed(3)}°</li>
+        <li>Geogr. Länge: ${ROUTE[i].lng.toFixed(3)}°</li>
+    </ul>
+`)};
 
 
  
