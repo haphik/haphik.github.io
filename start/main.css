@@ -1,4 +1,4 @@
-/* Bike Trail Tirol Beispiel */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
@@ -6,9 +6,10 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #e7eccf;
 }
-h1, h2, h3 {
-    font-family: 'Georgia', serif;
+h1, h2, h3, h4 {
+    font-family: 'Arial', serif;
 }
+
 a {
     color: black;
 }
@@ -16,28 +17,41 @@ a {
 main {
     max-width: 1200px;
     margin: auto;
+    margin-top: 0.5em;
+    padding-top:1em;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
+
+/*Header-layout*/
 /* KI */
 header {
-    display: flex;
-    grid-template-columns: 80% 20%;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 10px 20px;
+    position: relative;
 }
+
 header a {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
 }
-
 /* KI ende */
+
+/*Trecking Bild im Header*/
+
 header a img {
     border: 1px solid silver;
     border-radius: 50%;
     margin-top: -75px;
     margin-left: calc(50% - 50px);
 }
+/* KI */
+header>img {
+    width: 100%;
+  height: auto;
+  display: block;
+}
+/* KI Ende*/
 
 header h2 {
     margin: 0;
@@ -51,20 +65,36 @@ header nav {
 }
 
 article {
+    padding: 1em;
     margin-top: 0.5em;
-    border-top: 1px solid black;
+    /*border-top: 1px solid black;*/
     margin-bottom: 0.5em;
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
+}
+
+article p {
+    font-family: 'Arial', sans-serif;
+    text-align: justify;
+    line-height: 1.2em;
+}
+
+article h1,
+article h2,
+article h3 {
+    font-family: 'Arial', sans-serif;
 }
 
 #map {
     width: 1200px;
     height: 600px;
     border: 1px solid gray;
+    margin: auto;
 }
 
 footer {
-    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding: 1em 2em 3em 2em;
+    font-family: "Arial", sans-serif;
     font-size: 0.9em;
     margin-top: 0.5em;
 }
@@ -73,30 +103,96 @@ footer nav {
     display: inline-block;
 }
 
-.summary {
-    margin-bottom: 2em;
+a {
+    color:black;
 }
 
-.summary-badge {
+header img,
+#map {
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1280px) {
+    main {
+        border: none;
+    }
+
+    figure {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/*Popup-Styles*/
+
+.weather-popup {
+    font-family: "Arial", sans-serif;
+    font-size:0.9em;
+}
+
+.weather-popup h1, h2, h3, h4 {
+    font-family: "Arial", sans-serif;
+}
+.weather-icons {
+    text-align: center;
+    margin-top: 0.5em;
+    white-space:nowrap;
+    overflow-x: auto;
+}
+
+.weather-icon {
     display: inline-block;
-    padding: 0.4em;
-    border: 1px solid silver;
-    border-radius: 10px;
-    margin-right: 0.5em;
+    width: 40px;
+    margin: 0 4px;
+    font-size:0.8em;
+    vertical-align: top;
 }
 
-#pulldown {
-    font-size: 1.1em;
-    margin-bottom: 0.3 em;
+weather-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: auto;
 }
 
-.bike-tirol{
-    --ele-area: #3D9970;
-    --ele-bg: white;
+weather-meta {
+    font-size: 0.8em;
+    color: #444;
+    margin-top: 0.3em;
 }
 
-#profile{
-    margin-top: 0.3 em;
-    border: 1px solid gray;
+.leaflet-popup-content {
+    max-width:260px;
+    font-size:0.9em;
 }
 
+/*Header overlay*/
+/* KI */
+.overlay-nav {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.85); /* halbtransparentes Weiß */
+  padding: 1em 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-nav h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.overlay-nav nav {
+  margin-top: 0.5em;
+}
+
+.overlay-nav a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+/* KI Ende*/
