@@ -25,7 +25,7 @@ main {
 }
 
 /*Header-layout*/
-/* KI Beginn*/
+/* KI_BEGIN*/
 header {
     position: relative;
 }
@@ -35,7 +35,7 @@ header a {
     text-decoration: none;
     color: #333;
 }
-/* KI ende */
+/* KI_END */
 
 /*Trecking Bild im Header*/
 
@@ -45,13 +45,13 @@ header a img {
     margin-top: -75px;
     margin-left: calc(50% - 50px);
 }
-/* KI */
+/* KI_BEGIN */
 header>img {
     width: 100%;
   height: auto;
   display: block;
 }
-/* KI Ende*/
+/* KI_END*/
 
 header h2 {
     margin: 0;
@@ -85,18 +85,18 @@ article h3 {
 }
 
 #map {
-    /*KI Beginn*/
+    /*KI_BEGIN*/
     width: 100%;
     max-width: 100%;
-    /*KI Ende*/
+    /*KI_END*/
 
     height: 600px;
     border: 1px solid gray;
     margin: auto;
-    
-    /*KI Beginn*/
+
+    /*KI_BEGIN*/
     box-sizing: border-box;
-    /*KI Ende*/
+    /*KI_END*/
 }
 
 footer {
@@ -177,7 +177,7 @@ weather-meta {
 }
 
 /*Header overlay*/
-/* KI Beginn*/
+/* KI_BEGIN*/
 .overlay-nav {
   position: absolute;
   top: 10%;
@@ -203,4 +203,4 @@ weather-meta {
   color: #333;
   font-weight: bold;
 }
-/* KI Ende*/
+/* KI_END*/
