@@ -219,6 +219,21 @@ new L.GPX("Salfeinsee.gpx", {
   map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
 
+new L.GPX("Achselkopf.gpx", {
+  async: true,
+  marker_options: {
+    startIconUrl: null,
+    endIconUrl: null,
+    shadowUrl: null
+  },
+    polyline_options: {
+    color: "lightgreen",
+    wight: 5
+  }
+}).on('loaded', function(e) {
+  map.fitBounds(e.target.getBounds());
+}).addTo(overlays.routen);
+
 //Geo Search
 const searchControl = new GeoSearch.GeoSearchControl({
   provider: new GeoSearch.OpenStreetMapProvider(),
