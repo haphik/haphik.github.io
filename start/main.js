@@ -218,3 +218,11 @@ new L.GPX("Salfeinsee.gpx", {
 }).on('loaded', function(e) {
   map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
+
+//Geo Search
+const searchControl = new GeoSearch.GeoSearchControl({
+  provider: new GeoSearch.OpenStreetMapProvider(),
+  style:"bar",
+  searchLabel:"Adresse suchen"
+});
+map.addControl(searchControl);
