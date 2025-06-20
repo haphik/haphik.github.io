@@ -47,7 +47,7 @@ var controlElevation = L.control.elevation({
 
     //slope: true,
 }).addTo(map);
-controlElevation.load("Salfeinsee.gpx")
+controlElevation.load("Achselkopf.gpx")
 
 //Minimap
 var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {minZoom: 0, maxZoom: 13});
