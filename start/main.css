@@ -25,7 +25,7 @@ main {
 }
 
 /*Header-layout*/
-/* KI */
+/* KI Beginn*/
 header {
     position: relative;
 }
@@ -85,10 +85,18 @@ article h3 {
 }
 
 #map {
-    width: 1200px;
+    /*KI Beginn*/
+    width: 100%;
+    max-width: 100%;
+    /*KI Ende*/
+
     height: 600px;
     border: 1px solid gray;
     margin: auto;
+    
+    /*KI Beginn*/
+    box-sizing: border-box;
+    /*KI Ende*/
 }
 
 footer {
@@ -169,7 +177,7 @@ weather-meta {
 }
 
 /*Header overlay*/
-/* KI */
+/* KI Beginn*/
 .overlay-nav {
   position: absolute;
   top: 10%;
