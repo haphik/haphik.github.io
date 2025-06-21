@@ -1,15 +1,15 @@
-/* Bike Trail Tirol Beispiel */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
 body {
-    font-family: 'TT Commons Pro ', sans-serif;
+    font-family: 'Arial ', sans-serif;
     background-color: #e7eccf;
     font-size: 14px;
     line-height: 1.5;
 }
 h1, h2, h3 {
-    font-family: 'TT Livret Display', serif;
+    font-family: 'Arial', sans-serif;
 }
 a {
     color: black;
@@ -17,16 +17,19 @@ a {
 }
 
 main {
-    max-width: 100%;
+    max-width: 1200px;
     margin: auto;
+    margin-top: 0.5em;
+        padding: 1.5em;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
-/* KI */
+
+/*Header-layout*/
+/* KI_BEGIN*/
 header {
-    display: flex;
-    grid-template-columns: 80% 20%;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 10px 20px;
+    position: relative;
 }
 
 header a {
@@ -35,7 +38,23 @@ header a {
     color: #333;
 }
 
-/* KI ende */
+/* KI_END*/
+
+/*Trecking Bild im Header*/
+header a img {
+    border: 1px solid silver;
+    border-radius: 50%;
+    margin-top: -75px;
+    margin-left: calc(50% - 50px);
+}
+
+/* KI_BEGIN */
+header>img {
+    width: 100%;
+  height: auto;
+  display: block;
+}
+/* KI_END*/
 
 header h2 {
     margin: 0;
@@ -48,28 +67,91 @@ header nav {
     padding-top: 1em;
 }
 
+/*KI_BEGIN*/
+header nav #start:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+
+header nav #route1:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+
+header nav #route2:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+/*KI_END*/
+
 article {
     margin-top: 0.5em;
-    border-top: 1px solid black;
     margin-bottom: 0.5em;
-    border-bottom: 1px solid black;
     text-align: justify;
 }
 
+article p {
+    font-family: 'Arial', sans-serif;
+    text-align: justify;
+    line-height: 1.2em;
+}
+
+article h1,
+article h2,
+article h3 {
+    font-family: 'Arial', sans-serif;
+}
+
 #map {
+    /*KI_BEGIN*/
     width: 100%;
+    max-width: 100%;
+    /*KI_END*/
+
     height: 600px;
     border: 1px solid gray;
+    margin: auto;
+
+    /*KI_BEGIN*/
+    box-sizing: border-box;
+    /*KI_END*/
 }
 
 footer {
-    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding: 1em 2em 3em 2em;
+    font-family: "Arial", sans-serif;
     font-size: 0.9em;
     margin-top: 0.5em;
 }
 
 footer nav {
     display: inline-block;
+}
+
+a {
+    color:black;
+}
+
+header img,
+#map {
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1280px) {
+    main {
+        border: none;
+    }
+
+    figure {
+        margin-left: 0;
+        width: 100%;
+    }
 }
 
 .summary {
@@ -94,3 +176,121 @@ footer nav {
     border: 1px solid gray;
 }
 
+/*Header overlay*/
+/* KI_BEGIN*/
+.overlay-nav {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.85); /* halbtransparentes Weiß */
+  padding: 1em 2em;
+  border-radius: 0.2em;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+  max-width: 500px;
+}
+
+.overlay-nav h2 {
+  margin: 0;
+  font-size: 2.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.overlay-nav nav {
+  display: flex;
+  gap: 2em;
+  padding-left: 2.2em;
+}
+
+.overlay-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Menü-Container */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+
+/* Menü-Einträge */
+.menu li {
+  position: relative;
+}
+
+/* Menü-Links */
+.menu a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 0.8em;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover-Effekt für Hauptmenü */
+.menu > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.3em;
+}
+
+/* Dropdown-Inhalt */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.4em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  min-width: 160px;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0.4em 0;
+}
+
+/* Dropdown-Elemente */
+.dropdown-content li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown-Links */
+.dropdown-content li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Hover-Effekt im Dropdown */
+.dropdown-content li a:hover {
+  background-color: #f2f2f2;
+  border-radius: 0.3em;
+}
+
+/* Icon-Formatierung */
+.dropdown-content li i {
+  font-size: 1em;
+  min-width: 1.2em;
+}
+
+/* Anzeige Dropdown beim Hover */
+.menu li:hover .dropdown-content {
+  display: block;
+}
+/* KI_END*/
