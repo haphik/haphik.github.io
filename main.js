@@ -86,14 +86,14 @@ const ROUTE = [
         difficulty: "mittelschwer",
     },
     {
-        lat: 47.261468,
-        lng: 11.373871,
+        lat: 47.2888359,
+        lng: 11.35341561,
         zoom: 13,
         title: "Wanderung Achselkopf & Höttinger Alm",
         link: "../route2/index.html",
-        length: "XXX km",
-        duration: "X h",
-        difficulty: "xxx",
+        length: "9 km",
+        duration: "3 h",
+        difficulty: "schwer",
     }
     ];
 
