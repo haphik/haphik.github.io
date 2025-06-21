@@ -222,4 +222,85 @@ weather-meta {
   color: #333;
   font-weight: bold;
 }
+
+/* Menü-Container */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+
+/* Menü-Einträge */
+.menu li {
+  position: relative;
+}
+
+/* Menü-Links */
+.menu a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 0.8em;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover-Effekt für Hauptmenü */
+.menu > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.3em;
+}
+
+/* Dropdown-Inhalt */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.4em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  min-width: 160px;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0.4em 0;
+}
+
+/* Dropdown-Elemente */
+.dropdown-content li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown-Links */
+.dropdown-content li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Hover-Effekt im Dropdown */
+.dropdown-content li a:hover {
+  background-color: #f2f2f2;
+  border-radius: 0.3em;
+}
+
+/* Icon-Formatierung */
+.dropdown-content li i {
+  font-size: 1em;
+  min-width: 1.2em;
+}
+
+/* Anzeige Dropdown beim Hover */
+.menu li:hover .dropdown-content {
+  display: block;
+}
 /* KI_END*/
