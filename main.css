@@ -64,6 +64,25 @@ header nav {
     padding-top: 1em;
 }
 
+/*Ki*/
+header nav #start:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+
+header nav #route1:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+
+header nav #route2:hover {
+  color: #000000;
+  background: #e7eccf;
+  text-decoration: none;
+}
+
 article {
     padding: 1em;
     margin-top: 0.5em;
