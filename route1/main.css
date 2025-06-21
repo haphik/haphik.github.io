@@ -141,6 +141,7 @@ header img,
     box-shadow:
         0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom:1.5em; 
 }
 
 @media screen and (max-width: 1280px) {
@@ -169,11 +170,13 @@ header img,
 .hike{
     --ele-area: #006400;
     --ele-bg: #eaf1e7;
+    
 }
 
 #profile{
-    margin-top: 0.3 em;
-    border: 1px solid gray;
+        border: 1px solid gray;
+    padding: 1em;
+    margin-top: 1.5 em;
 }
 
 /*Header overlay*/
