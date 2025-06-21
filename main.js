@@ -237,6 +237,10 @@ new L.GPX("AchselbodenundHoettingerAlm.gpx", {
   map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
 
+//KI_BEGIN
+map.fitBounds(overlays.routen.getBounds());
+//KI_END
+
 //Geo Search
 const searchControl = new GeoSearch.GeoSearchControl({
   provider: new GeoSearch.OpenStreetMapProvider(),
