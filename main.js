@@ -39,7 +39,7 @@ L.control.layers({
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
     "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
 },{
-    "Wind": overlays.wind,
+    "Windvorhersage": overlays.wind,
     "Routen": overlays.routen,
 }).addTo(map);
 
@@ -160,6 +160,7 @@ for (let route of ROUTE) {
             
 
 //Windlayer 
+
 async function loadWindLayer() {
     try {
         const response = await fetch('https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json');
@@ -203,7 +204,7 @@ async function loadWindLayer() {
 }
 
 loadWindLayer();
-  
+
 
 //GPX-Route laden
 new L.GPX("Salfeinsee.gpx", {
