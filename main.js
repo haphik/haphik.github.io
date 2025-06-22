@@ -12,7 +12,8 @@ let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
 // thematische Layer
 let overlays = {
     wind: L.featureGroup(),
-    routen: L.featureGroup().addTo(map),  
+    routen: L.featureGroup().addTo(map),
+    schutzgebiete: L.featureGroup() 
 }
 
 
@@ -41,6 +42,7 @@ L.control.layers({
 },{
     "Windvorhersage": overlays.wind,
     "Routen": overlays.routen,
+    "Schutzgebiete": overlays.schutzgebiete,
 }).addTo(map);
 
 
@@ -205,6 +207,29 @@ async function loadWindLayer() {
 
 loadWindLayer();
 
+//Schutzgebiete
+async function loadSchutzgebiete(url) {
+    console.log(url);
+    //console.log(url;)
+    let response = await fetch(url);
+    let jsondata = await response.json();
+    console.log(jsondata);
+    //console.log(jsondata);
+    L.geoJSON(jsondata, {
+        attribution: "Datenquelle: <a href='https://www.data.gv.at/suche/?organisation=land-tirol' >Land Tirol</a>",
+        style: function (feature) {
+            console.log(feature);
+            return {
+                color: "#F012BE",
+                weight: 1,
+                opacity: 0.4,
+                fillOpacity: 0.1,
+            };
+        }
+    }).addTo(overlays.schutzgebiete);
+}
+    //GeoJSON laden und visualisieren
+loadSchutzgebiete("Schutzgebiete.geojson")
 
 //GPX-Route laden
 new L.GPX("Salfeinsee.gpx", {
@@ -248,3 +273,5 @@ const searchControl = new GeoSearch.GeoSearchControl({
   searchLabel:"Adresse suchen"
 });
 map.addControl(searchControl);
+
+
