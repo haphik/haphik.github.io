@@ -13,7 +13,7 @@ let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
 let overlays = {
     wind: L.featureGroup(),
     routen: L.featureGroup().addTo(map),
-    schutzgebiete: L.featureGroup() 
+    schutzgebiete: L.featureGroup()
 }
 
 
@@ -39,7 +39,7 @@ L.control.layers({
     "OpenStreetMap": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "EsriWorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
     "BasemapAt.grau": L.tileLayer.provider("BasemapAT.grau"),
-},{
+}, {
     "Windvorhersage": overlays.wind,
     "Routen": overlays.routen,
     "Schutzgebiete": overlays.schutzgebiete,
@@ -52,7 +52,7 @@ L.control.scale({
 }).addTo(map);
 
 //Minimap
-var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {minZoom: 0, maxZoom: 13});
+var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", { minZoom: 0, maxZoom: 13 });
 var miniMap = new L.Control.MiniMap(wmts, {
     toggleDisplay: true,
     minimized: false,
@@ -62,23 +62,23 @@ var miniMap = new L.Control.MiniMap(wmts, {
 map.addControl(new L.Control.Fullscreen());
 
 // Rainviewer initialisieren
-    
-    L.control.rainviewer({ 
-        position: 'bottomleft',
-        nextButtonText: '>',
-        playStopButtonText: '▶/⏸',
-        prevButtonText: '<',
-        positionSliderLabelText: "Zeit:",
-        opacitySliderLabelText: "Deckkraft:",
-        animationInterval: 300,
-        opacity: 0.5
-    }).addTo(map);
+
+L.control.rainviewer({
+    position: 'bottomleft',
+    nextButtonText: '>',
+    playStopButtonText: '▶/⏸',
+    prevButtonText: '<',
+    positionSliderLabelText: "Zeit:",
+    opacitySliderLabelText: "Deckkraft:",
+    animationInterval: 300,
+    opacity: 0.5
+}).addTo(map);
 
 //Popup und Wettervorhersage
 //Routenmarker
 const ROUTE = [
     {
-        lat: 47.188247, 
+        lat: 47.188247,
         lng: 11.24499,
         zoom: 13,
         title: "Wanderung Salfeinsee",
@@ -97,12 +97,12 @@ const ROUTE = [
         duration: "3 h",
         difficulty: "schwer",
     }
-    ];
+];
 
 //Wettervorhersage
-    async function showForecastForRoute(route, marker) {
+async function showForecastForRoute(route, marker) {
     let url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${route.lat}&lon=${route.lng}`;
-   
+
 
     try {
         let response = await fetch(url);
@@ -159,7 +159,7 @@ for (let route of ROUTE) {
     let marker = L.marker([route.lat, route.lng]).addTo(overlays.routen);
     showForecastForRoute(route, marker);
 }
-            
+
 
 //Windlayer 
 
@@ -173,7 +173,7 @@ async function loadWindLayer() {
 
         //let forecastSpan = document.querySelector("#forecast-link"); 
         //forecastSpan.innerHTML = `
-            //<a href="https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json" target="_blank">${forecastDate.toLocaleString()}</a>
+        //<a href="https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json" target="_blank">${forecastDate.toLocaleString()}</a>
         //`;
 
         const velocityLayer = L.velocityLayer({
@@ -198,7 +198,7 @@ async function loadWindLayer() {
             ],
             opacity: 0.97
         }).addTo(overlays.wind);
-        
+
     } catch (error) {
         console.error("Fehler beim Laden der Winddaten:", error);
         alert("Winddaten konnten nicht geladen werden.");
@@ -228,38 +228,38 @@ async function loadSchutzgebiete(url) {
         }
     }).addTo(overlays.schutzgebiete);
 }
-    //GeoJSON laden und visualisieren
+//GeoJSON laden und visualisieren
 loadSchutzgebiete("Schutzgebiete.geojson")
 
 //GPX-Route laden
 new L.GPX("Salfeinsee.gpx", {
-  async: true,
-  marker_options: {
-    startIconUrl: null,
-    endIconUrl: null,
-    shadowUrl: null
-  },
+    async: true,
+    marker_options: {
+        startIconUrl: null,
+        endIconUrl: null,
+        shadowUrl: null
+    },
     polyline_options: {
-    color: "darkgreen",
-    wight: 5
-  }
-}).on('loaded', function(e) {
-  map.fitBounds(e.target.getBounds());
+        color: "darkgreen",
+        wight: 5
+    }
+}).on('loaded', function (e) {
+    map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
 
 new L.GPX("AchselbodenundHoettingerAlm.gpx", {
-  async: true,
-  marker_options: {
-    startIconUrl: null,
-    endIconUrl: null,
-    shadowUrl: null
-  },
+    async: true,
+    marker_options: {
+        startIconUrl: null,
+        endIconUrl: null,
+        shadowUrl: null
+    },
     polyline_options: {
-    color: "darkblue",
-    wight: 5
-  }
-}).on('loaded', function(e) {
-  map.fitBounds(e.target.getBounds());
+        color: "darkblue",
+        wight: 5
+    }
+}).on('loaded', function (e) {
+    map.fitBounds(e.target.getBounds());
 }).addTo(overlays.routen);
 
 //KI_BEGIN
@@ -268,9 +268,9 @@ map.fitBounds(overlays.routen.getBounds());
 
 //Geo Search
 const searchControl = new GeoSearch.GeoSearchControl({
-  provider: new GeoSearch.OpenStreetMapProvider(),
-  style:"bar",
-  searchLabel:"Adresse suchen"
+    provider: new GeoSearch.OpenStreetMapProvider(),
+    style: "bar",
+    searchLabel: "Adresse suchen"
 });
 map.addControl(searchControl);
 
