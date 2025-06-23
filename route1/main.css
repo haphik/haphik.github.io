@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
 body {
-    font-family: 'Arial ', sans-serif;
-    background-color: #e7eccf;
+    font-family: 'Open Sans ', sans-serif;
+    background-color: #f0f0f0;
     font-size: 14px;
     line-height: 1.5;
 }
 h1, h2, h3 {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 a {
     color: black;
@@ -67,25 +67,7 @@ header nav {
     padding-top: 1em;
 }
 
-/*KI_BEGIN*/
-header nav #start:hover {
-  color: #000000;
-  background: #e7eccf;
-  text-decoration: none;
-}
 
-header nav #route1:hover {
-  color: #000000;
-  background: #e7eccf;
-  text-decoration: none;
-}
-
-header nav #route2:hover {
-  color: #000000;
-  background: #e7eccf;
-  text-decoration: none;
-}
-/*KI_END*/
 
 article {
     margin-top: 0.5em;
@@ -94,15 +76,16 @@ article {
 }
 
 article p {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: justify;
-    line-height: 1.2em;
+    line-height: 1.6em;
+    
 }
 
 article h1,
 article h2,
 article h3 {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #map {
@@ -123,7 +106,7 @@ article h3 {
 footer {
     text-align: center;
     padding: 1em 2em 3em 2em;
-    font-family: "Arial", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 0.9em;
     margin-top: 0.5em;
 }
