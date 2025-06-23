@@ -181,12 +181,12 @@ async function loadWindLayer() {
             displayOptions: {
                 velocityType: "Wind",
                 position: "bottomleft",
-                speedUnit: "km/h",
+                speedUnit: "k/h",
                 emptyString: "Keine Winddaten verfügbar",
-                angleConversion: "meteo",
+                angleConvention: "meteo",
                 showCardinal: true,
                 directionString: "Richtung",
-                speedString: "Geschwindigkeit"
+                speedString: "Geschwindigkeit (km/h)"
             },
             data: data,
             minVelocity: 0,
