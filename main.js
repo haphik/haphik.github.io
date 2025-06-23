@@ -93,8 +93,8 @@ const ROUTE = [
         zoom: 13,
         title: "Wanderung Achselkopf & Höttinger Alm",
         link: "../route2/index.html",
-        length: "9 km",
-        duration: "3 h",
+        length: "15,7 km",
+        duration: "4 h",
         difficulty: "schwer",
     }
 ];
