@@ -204,6 +204,7 @@ weather-meta {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  font-family: 'Aboreto', sans-serif;
 }
 
 .overlay-nav nav {
