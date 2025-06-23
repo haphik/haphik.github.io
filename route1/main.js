@@ -69,6 +69,21 @@ L.control.scale({
     imperial: false,
 }).addTo(map);
 
+// Standort: GeoJSON asynchron laden
+        async function loadGeoJSON(url) {
+            let response = await fetch(url);
+            let geojson = await response.json();
+
+        }
+        //loadGeoJSON(<URL>);
+//Leaflet Locate Control
+L.control.locate({
+    strings: {
+    title: "eigenen Standort anzeigen"
+},
+drawCircle: false,
+}).addTo(map);
+
 
 // leaflet plugin elevation
 var controlElevation = L.control.elevation({
