@@ -209,16 +209,14 @@ loadWindLayer();
 
 //Schutzgebiete
 async function loadSchutzgebiete(url) {
-    console.log(url);
     //console.log(url;)
     let response = await fetch(url);
     let jsondata = await response.json();
-    console.log(jsondata);
     //console.log(jsondata);
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href='https://www.data.gv.at/suche/?organisation=land-tirol' >Land Tirol</a>",
         style: function (feature) {
-            console.log(feature);
+            //console.log(feature);
             return {
                 color: "#F012BE",
                 weight: 1,
