@@ -26,7 +26,7 @@ let eGrundkarteTirol = {
     })
 }
 
-// / Layer control mit eGrundkarte Tirol und Standardlayern
+// Layer control mit eGrundkarte Tirol und Standardlayern
 L.control.layers({
     "eGrundkarte Tirol Sommer": L.layerGroup([
         eGrundkarteTirol.sommer,
@@ -46,18 +46,16 @@ L.control.scale({
     imperial: false,
 }).addTo(map);
 
-//Schutzgebiete
+// Schutzgebiete
 async function loadSchutzgebiete(url) {
-    console.log(url);
     //console.log(url;)
     let response = await fetch(url);
     let jsondata = await response.json();
-    console.log(jsondata);
     //console.log(jsondata);
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href='https://www.data.gv.at/suche/?organisation=land-tirol' >Land Tirol</a>",
         style: function (feature) {
-            console.log(feature);
+            //console.log(feature);
             return {
                 color: "#F012BE",
                 weight: 1,
@@ -67,22 +65,15 @@ async function loadSchutzgebiete(url) {
         }
     }).addTo(overlays.schutzgebiete);
 }
-//GeoJSON laden und visualisieren
+// GeoJSON laden und visualisieren
 loadSchutzgebiete("Schutzgebiete.geojson");
 
-// Standort: GeoJSON asynchron laden
-        async function loadGeoJSON(url) {
-            let response = await fetch(url);
-            let geojson = await response.json();
-
-        }
-        //loadGeoJSON(<URL>);
-//Leaflet Locate Control
+// Leaflet Locate Control
 L.control.locate({
     strings: {
-    title: "eigenen Standort anzeigen"
-},
-drawCircle: false,
+        title: "eigenen Standort anzeigen"
+    },
+    drawCircle: false,
 }).addTo(map);
 
 // leaflet plugin elevation
@@ -91,17 +82,15 @@ var controlElevation = L.control.elevation({
     time: false,
     elevationDiv: "#profile",
     height: 300,
-
-    //slope: true,
 }).addTo(map);
 controlElevation.load("AchselbodenundHoettingerAlm.gpx")
 
-//Minimap
+// Minimap
 var wmts = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", { minZoom: 0, maxZoom: 13 });
 var miniMap = new L.Control.MiniMap(wmts, {
     toggleDisplay: true,
     minimized: true,
 }).addTo(map);
 
-//Fullscreen
+// Fullscreen
 map.addControl(new L.Control.Fullscreen());
