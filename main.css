@@ -1,170 +1,177 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
 
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f0f0f0;
-    font-size: 14px;
-    line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  line-height: 1.5;
 }
-h1, h2, h3 {
-    font-family: 'Aboreto', sans-serif;
+
+h1,
+h2,
+h3 {
+  font-family: 'Aboreto', sans-serif;
 }
 
 a {
-    color: black;
-    font-size: 14px;
+  color: black;
+  font-size: 14px;
 }
 
 main {
-    max-width: 1200px;
-    margin: auto;
-    margin-top: 0.5em;
-    padding-top:1em;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 0.5em;
+  padding-top: 1em;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 /*Header-layout*/
 /* KI_BEGIN*/
 header {
-    position: relative;
+  position: relative;
 }
 
 header a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
 }
+
 /* KI_END */
 
 /*Trecking Bild im Header*/
 
 header a img {
-    border: 1px solid silver;
-    border-radius: 50%;
-    margin-top: -75px;
-    margin-left: calc(50% - 50px);
+  border: 1px solid silver;
+  border-radius: 50%;
+  margin-top: -75px;
+  margin-left: calc(50% - 50px);
 }
+
 /* KI_BEGIN */
 header>img {
   width: 100%;
   height: auto;
   display: block;
 }
+
 /* KI_END*/
 
 header h2 {
-    margin: 0;
+  margin: 0;
 }
 
 header nav {
-    text-align: right;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding-top: 1em;
+  text-align: right;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding-top: 1em;
 }
 
 
 
 article {
-    padding: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    }
+  padding: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
 article p {
-    font-family: 'Open Sans', sans-serif;
-    text-align: justify;
-    line-height: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6em;
 }
 
 article h1,
 article h2,
 article h3 {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #map {
-    /*KI_BEGIN*/
-    width: 100%;
-    max-width: 100%;
-    
-    height: 600px;
-    border: 1px solid gray;
-    margin: auto;
+  /*KI_BEGIN*/
+  width: 100%;
+  max-width: 100%;
 
-    box-sizing: border-box;
-    /*KI_END*/
+  height: 600px;
+  border: 1px solid gray;
+  margin: auto;
+
+  box-sizing: border-box;
+  /*KI_END*/
 }
 
 footer {
-    text-align: center;
-    padding: 1em 2em 3em 2em;
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.9em;
-    margin-top: 0.5em;
+  text-align: center;
+  padding: 1em 2em 3em 2em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  margin-top: 0.5em;
 }
 
 footer nav {
-    display: inline-block;
+  display: inline-block;
 }
 
 a {
-    color:black;
+  color: black;
 }
 
 header img,
 #map {
-    box-shadow:
-        0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1280px) {
-    main {
-        border: none;
-    }
+  main {
+    border: none;
+  }
 
-    figure {
-        margin-left: 0;
-        width: 100%;
-    }
+  figure {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 /*Popup-Styles*/
 
 .weather-popup {
-    font-family: "Open Sans", sans-serif;
-    font-size:0.9em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
 }
 
-.weather-popup h1, h2, h3, h4 {
-    font-family: "Open Sans", sans-serif;
+.weather-popup h1,
+h2,
+h3,
+h4 {
+  font-family: "Open Sans", sans-serif;
 }
+
 .weather-icons {
-    text-align: center;
-    margin-top: 0.5em;
-    white-space:nowrap;
-    overflow-x: auto;
+  text-align: center;
+  margin-top: 0.5em;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .weather-icon {
-    display: inline-block;
-    width: 40px;
-    margin: 0 4px;
-    font-size:0.8em;
-    vertical-align: top;
+  display: inline-block;
+  width: 40px;
+  margin: 0 4px;
+  font-size: 0.8em;
+  vertical-align: top;
 }
 
 
 .leaflet-popup-content {
-    max-width:260px;
-    font-size:0.9em;
+  max-width: 260px;
+  font-size: 0.9em;
 }
 
 /*Header overlay*/
@@ -173,7 +180,7 @@ header img,
   position: absolute;
   top: 10%;
   left: 5%;
-  background-color: rgba(255, 255, 255, 0.85); 
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1em 2em;
   border-radius: 0.2em;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
@@ -230,7 +237,7 @@ header img,
 }
 
 /* Hover-Effekt für Hauptmenü */
-.menu > li > a:hover {
+.menu>li>a:hover {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 0.3em;
 }
@@ -244,7 +251,7 @@ header img,
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0.4em;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   min-width: 160px;
   z-index: 1000;
   list-style: none;
@@ -285,4 +292,5 @@ header img,
 .menu li:hover .dropdown-content {
   display: block;
 }
+
 /* KI_END*/
