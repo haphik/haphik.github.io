@@ -171,10 +171,7 @@ async function loadWindLayer() {
         let forecastDate = new Date(data[0].header.refTime);
         forecastDate.setHours(forecastDate.getHours() + data[0].header.forecastTime);
 
-        //let forecastSpan = document.querySelector("#forecast-link"); 
-        //forecastSpan.innerHTML = `
-        //<a href="https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json" target="_blank">${forecastDate.toLocaleString()}</a>
-        //`;
+        
 
         const velocityLayer = L.velocityLayer({
             displayValues: true,
