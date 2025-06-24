@@ -52,7 +52,7 @@ header a img {
 }
 /* KI_BEGIN */
 header>img {
-    width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -93,13 +93,11 @@ article h3 {
     /*KI_BEGIN*/
     width: 100%;
     max-width: 100%;
-    /*KI_END*/
-
+    
     height: 600px;
     border: 1px solid gray;
     margin: auto;
 
-    /*KI_BEGIN*/
     box-sizing: border-box;
     /*KI_END*/
 }
@@ -163,18 +161,6 @@ header img,
     vertical-align: top;
 }
 
-weather-icon img {
-    width: 32px;
-    height: 32px;
-    display: block;
-    margin: auto;
-}
-
-weather-meta {
-    font-size: 0.8em;
-    color: #444;
-    margin-top: 0.3em;
-}
 
 .leaflet-popup-content {
     max-width:260px;
