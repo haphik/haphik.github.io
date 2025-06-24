@@ -73,7 +73,6 @@ L.control.scale({
         async function loadGeoJSON(url) {
             let response = await fetch(url);
             let geojson = await response.json();
-
         }
         //loadGeoJSON(<URL>);
 //Leaflet Locate Control
@@ -91,8 +90,7 @@ var controlElevation = L.control.elevation({
     time:false,
     elevationDiv: "#profile",
     height: 300,
-
-    //slope: true,
+ //slope: true,
 }).addTo(map);
 controlElevation.load("Salfeinsee.gpx")
 
