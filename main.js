@@ -188,7 +188,7 @@ async function loadWindLayer() {
             data: data,
             minVelocity: 0,
             maxVelocity: 10,
-            velocityScale: 0.005,
+            velocityScale: 0.02,
             colorScale: [
                 "#3288bd", "#66c2a5", "#abdda4", "#e6f598",
                 "#fee08b", "#fdae61", "#f46d43", "#d53e4f"
