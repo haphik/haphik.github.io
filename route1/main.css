@@ -2,7 +2,7 @@
 
 
 body {
-  font-family: 'Open Sans ', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f0f0f0;
   font-size: 14px;
   line-height: 1.5;
@@ -71,8 +71,6 @@ header nav {
   padding-top: 1em;
 }
 
-
-
 article {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -81,9 +79,7 @@ article {
 
 article p {
   font-family: 'Open Sans', sans-serif;
-  text-align: justify;
   line-height: 1.6em;
-
 }
 
 article h1,
@@ -153,7 +149,6 @@ header img,
 .hike {
   --ele-area: #006400;
   --ele-bg: #eaf1e7;
-
 }
 
 #profile {
