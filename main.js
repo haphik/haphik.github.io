@@ -103,7 +103,6 @@ const ROUTE = [
 async function showForecastForRoute(route, marker) {
     let url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${route.lat}&lon=${route.lng}`;
 
-
     try {
         let response = await fetch(url);
         let jsondata = await response.json();
